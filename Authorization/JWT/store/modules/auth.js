@@ -6,6 +6,10 @@ function checkTokenValidity(token) {
     if (token) {
         const decodedToken = jwt.decode(token)
 
+        // мы также можем получить данные payload у токена
+        // console.log(decodedToken.payload)
+        // подробнее https://www.npmjs.com/package/jsonwebtoken
+
         return decodedToken && (decodedToken.exp * 1000) > new Date().getTime()
     }
 
